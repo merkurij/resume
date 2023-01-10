@@ -16,12 +16,14 @@
   --content-bg-color: #fff;
   --main-text-color: #222;
   --section-label-color: #0a66c2;
+  --skill-bg-color: #ebebeb;
 
 
   --main-bg-color-dark: #2b2b2b;
   --content-bg-color-dark: #313335;
   --main-text-color-dark: #A9B7C6;
   --section-label-color-dark: #0a66c2;
+  --skill-bg-color-dark: #2b2b2b;
 }
 
 
@@ -424,10 +426,13 @@ section {
 
 .skill-section > ul > li {
   display: inline-block;
-  background-color: #ebebeb;
+  background-color: var(--skill-bg-color);
   padding: 2px 20px;
   margin: 5px;
   border-radius: 25px;
+}
+.dark .skill-section > ul > li {
+  background-color: var(--skill-bg-color-dark);
 }
 
 /*

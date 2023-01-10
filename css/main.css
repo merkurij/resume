@@ -293,29 +293,35 @@ a:hover {
 
 p {
     text-indent: 20px;
+    margin: 10px 0;
 }
 
 header {
-  padding: 0 10px 20px 10px;
+  padding: 0 10px 10px 10px;
   font-weight: 600;
 }
 
 section {
   padding: 20px 10px;
+  margin-top: 10px;
+}
+
+.spacer {
+  height: 20px;
 }
 
 
 /*
  *  Header style
  */
-.holder-name{
+.holder-name {
   font-size: 32px;
   text-align: center;
 }
 
-.holder-details{
+.holder-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -323,16 +329,27 @@ section {
   font-size: 18px;
 }
 
-.holder-mail{
+.holder-mail {
   font-size: 18px
 }
 
-.holder-linkedin{
+.holder-linkedin {
   font-size: 18px
 }
 
-.holder-location{
+.holder-location {
   font-size: 18px
+}
+@media (max-width: 899px) {
+  .holder-details {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 900px) {
+  .holder-details {
+    flex-direction: row;
+  }
 }
 
 /*

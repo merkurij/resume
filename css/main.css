@@ -310,7 +310,6 @@ section {
   height: 20px;
 }
 
-
 /*
  *  Header style
  */
@@ -321,27 +320,13 @@ section {
 
 .holder-details {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
 
-.holder-position {
-  font-size: 18px;
-}
-
-.holder-mail {
-  font-size: 18px
-}
-
-.holder-linkedin {
-  font-size: 18px
-}
-
-.holder-location {
-  font-size: 18px
-}
-
 @media (max-width: 899px) {
+  .holder-details {
+    font-size: 16px;
+  }
   .holder-details, .certificates-section > header, .education-section > header, .experience-section > header {
     flex-direction: column;
   }
@@ -354,6 +339,9 @@ section {
 }
 
 @media (min-width: 900px) {
+  .holder-details {
+    font-size: 18px;
+  }
   .holder-details, .certificates-section > header, .education-section > header, .experience-section > header {
     flex-direction: row;
   }

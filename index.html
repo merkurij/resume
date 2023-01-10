@@ -21,8 +21,14 @@
 </head>
 
 <body>
-  <header>
+  <header class="main-header">
     <div class="holder-name">Vitaly Kulikov</div>
+    <div class="theme-switcher" title="Dark/Light theme switcher">
+      <label class="switch">
+        <input type="checkbox" onchange="mode(this)">
+        <span class="slider round"></span>
+      </label>
+    </div>
     <div class="holder-details">
       <div class="holder-position icon profession-light">Software Architect, Engineering Manager</div>
       <div class="holder-mail icon email-light"><a href="mailto:kulikov.vitaly@gmail.com">kulikov.vitaly@gmail.com</a></div>
@@ -128,7 +134,15 @@
       <div class="right">11/2006</div>
     </header>
   </section>
-  <footer></footer>
-</body>
 
+  <script>
+    function mode(el) {
+      if(el.checked) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  </script>
+</body>
 </html>

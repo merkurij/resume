@@ -15,7 +15,13 @@
   --main-bg-color: #f0f0f0;
   --content-bg-color: #fff;
   --main-text-color: #222;
-  --section-label-color: #0a66c2
+  --section-label-color: #0a66c2;
+
+
+  --main-bg-color-dark: #2b2b2b;
+  --content-bg-color-dark: #313335;
+  --main-text-color-dark: #A9B7C6;
+  --section-label-color-dark: #0a66c2;
 }
 
 
@@ -24,6 +30,10 @@ html {
   font-size: 1em;
   line-height: 1.4;
   background-color: var(--main-bg-color);
+}
+html.dark {
+  color: var(--main-text-color-dark);
+  background-color: var(--main-bg-color-dark);
 }
 
 /*
@@ -282,9 +292,17 @@ body {
   border-radius: 12px;
 }
 
+.dark > body {
+  background-color: var(--content-bg-color-dark);
+}
+
 a {
   color: var(--main-text-color);
   text-decoration: none;
+}
+
+.dark a {
+  color: var(--main-text-color-dark);
 }
 
 a:hover {
@@ -313,6 +331,9 @@ section {
 /*
  *  Header style
  */
+.main-header{
+  position: relative;
+}
 .holder-name {
   font-size: 32px;
   text-align: center;
@@ -369,6 +390,9 @@ section {
   padding: 0 5px;
   color: var(--section-label-color);
   font-weight: 600;
+}
+.dark .block > h1 > span {
+  color: var(--section-label-color-dark);
 }
 .block > h1:before {
   border-top: 2px groove threedface;
@@ -472,5 +496,79 @@ section {
 
 .java-light {
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFN0lEQVR4nO1Za0xcRRS+vuIjJmriT030h4/EaGMaEGN0DTtzFwraJnbLnVnKlp1hoW0aJcXqj1pEbVBLJUKtYq2UthG1QqE2CGlarKVqDdoUU4MB7IMKCNtSHtVtd2HMWfYus8u+/LF7MeFLJuHOnVm+78w5Z87MVZQFLOD/DbOtIAVTfgpTNmHW+DplPiJdY4+phNtMdvstcr9K+WJE+BimXEBDhHcr8xGI8DY/waNWq/WGQD/lnTp533vqKEkKIUz4bqQ5suIdr1KWo5M0E57n+w3KnpLJY8KaFUW5TkkGwF9nLMpqMzLW3RxrfGlp6fWYsHN+ol1AFIyAA67D/jDZ7XfCWJOp9MaEC0CUn5+1HG9PsxbfGnMOYdtmLc7qEGXuGbfhXkQdK8EYiLJLvmfCdyZUwEzWkH2XH4hlOWxj9iCXmQ3ccUzZ3yH9fyZUAATjHDKE747mwxaNPxJOAJ4jiP2MqeOZhArAhDWFJUD4y5HmmKxrbo9MnLVabPxpGKMkA4jwXWGtR/lVs+Z4PNwcCPYIFp9CNocZAl1JFjBhlVHc4LdwQa3mrLo3qutQ5oZ9wWxjzyZcACJsUyiB5Zrd9ZyWP+5/rg6dYyYFL8QXA/xowgWAr+v/kKzIG+hXn+ycSE+dmkhP8R7MzmgHt1Bz8xcFiaZsa4i7DSPCP8eUl82kVd6JCO+BTS/hAhBl64HEUm3V2GXzE/2T5lShtwlzigdWA8oHfTy4FBCWBFRnO523KUYBU1YMRL7NTG93V5aLqzXvBwRA4ytsfX53sMwI5kVSyVCpGA1EHSVAxmVO654e/kt42g5KK5A6olLu9RM+Zc7hD2LKLvvJXwitSA0BovwNIDSM0k67X39FXLEuCQjYk50VvMkR7pKey5T5AExZFRD6YOnzHRC4Psunp3hbl+D2aBkmKSkyHmDKf9FJOa223oply34gOfYhvU+1FYgXS8vnCDAR592K0VBz8xfFyuUVNbvE0IhLZK4slNOmN6m7bSQgyuqjkX+r6iNx7ZpHACpqauWS4YpiNBApfAAsKRNu+OaQqG9uEXsbvxa/dvcIGf0DQ8KS69QLNo/R/BX5FKW3njPnRDRs3FI1P2IA5/L7wYp6BamT6h8YjCrgeOdJ2Y1WG546EZS/hLXopFyXRqMK8HqnhLa2RHejYwYK4IN+EnVwftXTJRCMhU+/aNRXYdqSU3ifMQIIP+sjAWdb/4nMWlQs4kHv2fPy6WuDIQIQ4e/5SfRhwn6Cv9dt2hyXgOnpaZGzZn3y6v1IQaxfhejt7e2fiHjxzvadgXSaRVffpRgBFHIo2dNwIG4Bhzt+lAq8As0YAYQ1ygKOHD8RtwDIVtLcHUknj0mBFroL/953Zg7RweER0dR2WBw69r34x+0Oere88CW9xD6ddAGIsr2hu/Cw62JQoNZ91RxUwBW+WiZGx8YDY0re3BK4StHvQpMGuBaHG2RZwPjEpI+Yx+MR5dt2hC3uXquoDgh490M9kCEdO1Ql2bDYHA9hynp1EkAcKk+53gnXWo585xNQ++X+2cONUV9jkHTLDHXOhs1bY971ZOYViRMnu8THn+0Thh/uEWH7IhGFmh9TvhEucpHGCdwyy++h9JAENBkkgHeEJU/5RZWwVHmsSpwPY8JHwwtmrYYIkGNAsuYFRJ2Phh2vsdwIq9Vi1ApMhpDvyrDxe6LOoXz/3BVj9UqysdjpvEk/1Pit2IiszjtizYOTWJiVW6sYASiHIZBVyrP/yzxYJUx4A3xSgnvTeL6rLWABSuLxL6mXEMzCo8yTAAAAAElFTkSuQmCC");
+}
+
+
+/*
+ * Toggle slider
+ */
+
+.theme-switcher {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 

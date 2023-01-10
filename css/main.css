@@ -340,15 +340,31 @@ section {
 .holder-location {
   font-size: 18px
 }
+
 @media (max-width: 899px) {
-  .holder-details {
+  .holder-details, .certificates-section > header, .education-section > header, .experience-section > header {
     flex-direction: column;
+  }
+
+  .certificates-section > header > .left, .education-section > header > .left, .experience-section > header > .left,
+  .certificates-section > header > .center, .education-section > header > .center, .experience-section > header > .center,
+  .certificates-section > header > .right, .education-section > header > .right, .experience-section > header > .right {
+    text-align: center;
   }
 }
 
 @media (min-width: 900px) {
-  .holder-details {
+  .holder-details, .certificates-section > header, .education-section > header, .experience-section > header {
     flex-direction: row;
+  }
+  .certificates-section > header > .left, .education-section > header > .left, .experience-section > header > .left {
+    text-align: left;
+  }
+  .certificates-section > header > .center, .education-section > header > .center, .experience-section > header > .center {
+    text-align: center;
+  }
+  .certificates-section > header > .right, .education-section > header > .right, .experience-section > header > .right {
+    text-align: right;
   }
 }
 
@@ -399,12 +415,10 @@ section {
 
 .certificates-section > header, .education-section > header, .experience-section > header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 .certificates-section > header > .center, .education-section > header > .center, .experience-section > header > .center {
   flex: 1;
-  text-align: center;
 }
 
 .certificates-section > header > .left, .education-section > header > .left, .experience-section > header > .left {
@@ -413,7 +427,6 @@ section {
 
 .certificates-section > header > .right, .education-section > header > .right, .experience-section > header > .right {
   flex: 1;
-  text-align: right;
 }
 
 

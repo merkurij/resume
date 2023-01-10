@@ -505,8 +505,8 @@ section {
 
 .theme-switcher {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 9px;
+  right: 10px;
 }
 
 /* The switch - the box around the slider */

@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - hugo-init  # Set a branch that will trigger a deployment
+      - main
   pull_request:
 
 jobs:

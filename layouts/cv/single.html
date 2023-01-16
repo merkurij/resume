@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Params.name }} - professional resume</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="{{ .Params.name }} - professional resume">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+
+  {{ with .Page.Resources.GetMatch "og-preview.jpg" }}
+  <meta property="og:image" content="{{ .Permalink }}">
+  {{ end }}
+
+<!--  <link rel="manifest" href="site.webmanifest">-->
+<!--  <link rel="apple-touch-icon" href="icon.png">-->
+  <!-- Place favicon.ico in the root directory -->
+
+  {{ with resources.Get "css/normalize.css" | minify }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
+
+  {{ with resources.Get "css/main.css" | minify }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ end }}
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="holder-name">{{ .Params.name }}</div>
+    <div class="theme-switcher" title="Dark/Light theme switcher">
+      <label class="switch">
+        <input type="checkbox" onchange="mode(this)">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <div class="holder-details">
+      <div class="holder-position icon profession-light">{{ .Params.position }}</div>
+      <div class="holder-mail icon email-light"><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></div>
+      <div class="holder-linkedin icon linkedin-light"><a href="{{ .Params.linkedin }}" target="_blank">LinkedIn</a></div>
+      <div class="holder-location icon location-light">{{ .Params.location }}</div>
+    </div>
+  </header>
+  <section class="skill-section block">
+    <h1><span>Skills</span></h1>
+    <ul>
+      {{ range .Params.skills }}
+        <li>
+          {{ . | safeHTML }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  <section class="bio-section block">
+    <h1><span>About me</span></h1>
+    <p>{{ .Params.aboutme }}</p>
+  </section>
+  <section class="experience-section block">
+    <h1><span>Work experience</span></h1>
+
+    {{ range $index, $val := .Params.experience }}
+      {{ if gt $index 0}}
+      <div class="spacer"></div>
+      {{ end }}
+
+      <header>
+        <div class="left">{{ .position }}</div>
+        <div class="center"><a href="{{ .link }}" target="_blank" class="icon _company {{ .iconStyle }}">{{ .place }}</a></div>
+        <div class="right">{{ .period }}</div>
+      </header>
+
+      <p>{{ .description }}</p>
+    {{ end }}
+  </section>
+
+  <section class="education-section block">
+    <h1><span>Education</span></h1>
+
+    {{ range .Params.education }}
+    <header>
+      <div class="left">{{ .title }}</div>
+      <div class="center"><a href="{{ .link }}" target="_blank" class="icon _company {{ .iconStyle }}">{{ .place }}</a></div>
+      <div class="right">{{ .period }}</div>
+    </header>
+    {{ end }}
+  </section>
+
+  <section class="certificates-section block">
+    <h1><span>Certifications</span></h1>
+
+    {{ range .Params.certificates }}
+    <header>
+      <div class="left">{{ .title }}</div>
+      <div class="center"><span class="icon _company {{ .iconStyle }}">{{ .place }}</span></div>
+      <div class="right">{{ .date }}</div>
+    </header>
+    {{ end }}
+  </section>
+
+  <script>
+    function mode(el) {
+      if(el.checked) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  </script>
+</body>
+</html>

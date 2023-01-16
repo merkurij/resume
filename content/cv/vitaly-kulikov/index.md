@@ -114,7 +114,7 @@ experience:
 - position: UI Software Engineer
   link: https://www.ctco.lv
   iconStyle: ctco-light
-  place: Swiss Re via C.T.Co
+  place: C.T.Co
   period: 4/2004 - 9/2006
   description: >
     I played a significant role in a research lab where we explored the potential 

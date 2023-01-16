@@ -30,6 +30,7 @@ skills:
 - Latvian
 - English
 - <i>– All professional proficiency or above</i>
+
 aboutme: >
   As a highly skilled Software Engineer 
   with extensive experience in core web technologies, 
@@ -73,6 +74,70 @@ experience:
     and implement robust processes to prevent production catastrophes. Overall, 
     I have the experience of managing a large team, delivering a product that generates a significant amount 
     of revenue and scaling it to a large scale.
+
+- position: Senior Web and GWT Software Engineer
+  link: https://ok.ru
+  iconStyle: ok-light
+  place: OK.RU
+  period: 9/2010 - 2/2012
+  description: >
+    I began my tenure at OK.RU as a senior web developer and quickly created a web interface for a 
+    music service that outperformed Spotify's at the time. I continued to develop and improve the music web 
+    interface while becoming deeply interested in web performance optimization. After some time, 
+    I successfully convinced the company's CEO of the importance of web performance, and in less than a year, 
+    I made the website two times faster on initial load and significantly faster overall. 
+    This resulted in a great success, leading to my promotion to Web Development Team Leader.
+
+- position: Engineering Team Leader
+  link: https://www.swissre.com
+  iconStyle: swiss-re-light
+  place: Swiss Re via C.T.Co
+  period: 6/2008 - 9/2010
+  description: >
+    As a highly experienced Java developer, I have progressed to a leadership role as 
+    the engineering team leader on a major project. My duties include analyzing technical requirements, 
+    collaborating with clients on technical solutions, setting development team goals, 
+    managing task execution, mentoring team members, and providing guidance for career development.
+
+- position: Java Software Engineer
+  link: https://www.swissre.com
+  iconStyle: swiss-re-light
+  place: Swiss Re via C.T.Co
+  period: 9/2006 - 6/2008
+  description: >
+    I was an integral member of the development team responsible for creating a 
+    new claim management workflow system for Swiss Re. 
+    My specific role was to design and develop the user interface using the ZKoss framework. 
+    Initially intended as a proof-of-concept, the project ultimately proved to be a success and became a 
+    key component of the company's portfolio, ultimately becoming the largest project the company had undertaken at that point.
+
+- position: UI Software Engineer
+  link: https://www.ctco.lv
+  iconStyle: ctco-light
+  place: Swiss Re via C.T.Co
+  period: 4/2004 - 9/2006
+  description: >
+    I played a significant role in a research lab where we explored the potential 
+    use of new web technologies in our projects. One of my most notable accomplishments 
+    in this role was the development of a common components library. 
+    This library has served as the primary tool for creating user interfaces within the company, to my knowledge it still does.
+
+education:
+- title: Bachelor in Computer Science
+  link: https://www.rtu.lv/en
+  iconStyle: rtu-light
+  place: Riga Technical University
+  period: 9/2000 - 6/2004
+
+certificates:
+- title: Sun Java Programmer
+  iconStyle: java-light
+  place: Sun Microsystems
+  date: 6/2006
+- title: Sun Web Component Developer
+  iconStyle: java-light
+  place: Sun Microsystems
+  date: 11/2006
 ---
 
 

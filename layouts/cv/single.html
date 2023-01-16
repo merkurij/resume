@@ -39,7 +39,7 @@
     </div>
     <div class="holder-details">
       <div class="holder-position icon profession-light">{{ .Params.position }}</div>
-      <div class="holder-mail icon email-light"><a href="mailto:kulikov.vitaly@gmail.com">{{ .Params.email }}</a></div>
+      <div class="holder-mail icon email-light"><a href="mailto:{{ .Params.email }}">{{ .Params.email }}</a></div>
       <div class="holder-linkedin icon linkedin-light"><a href="{{ .Params.linkedin }}" target="_blank">LinkedIn</a></div>
       <div class="holder-location icon location-light">{{ .Params.location }}</div>
     </div>
@@ -61,7 +61,11 @@
   <section class="experience-section block">
     <h1><span>Work experience</span></h1>
 
-    {{ range .Params.experience }}
+    {{ range $index, $val := .Params.experience }}
+      {{ if gt $index 0}}
+      <div class="spacer"></div>
+      {{ end }}
+
       <header>
         <div class="left">{{ .position }}</div>
         <div class="center"><a href="{{ .link }}" target="_blank" class="icon _company {{ .iconStyle }}">{{ .place }}</a></div>
@@ -69,71 +73,31 @@
       </header>
 
       <p>{{ .description }}</p>
-
-      <div class="spacer"></div>
     {{ end }}
-
-
-    <div class="spacer"></div>
-    <header>
-      <div class="left">Senior Web and GWT Software Engineer</div>
-      <div class="center"><a href="https://ok.ru" target="_blank" class="icon _company ok-light">OK.RU</a></div>
-      <div class="right">9/2010 - 2/2012</div>
-    </header>
-
-    <p>I began my tenure at OK.RU as a senior web developer and quickly created a web interface for a music service that outperformed Spotify's at the time. I continued to develop and improve the music web interface while becoming deeply interested in web performance optimization. After some time, I successfully convinced the company's CEO of the importance of web performance, and in less than a year, I made the website two times faster on initial load and significantly faster overall. This resulted in a great success, leading to my promotion to Web Development Team Leader.</p>
-
-    <div class="spacer"></div>
-    <header>
-      <div class="left">Engineering Team Leader</div>
-      <div class="center"><a href="https://www.swissre.com/" target="_blank" class="icon _company swiss-re-light">Swiss Re via C.T.Co</a></div>
-      <div class="right">6/2008 - 9/2010</div>
-    </header>
-
-    <p>As a highly experienced Java developer, I have progressed to a leadership role as the engineering team leader on a major project. My duties include analyzing technical requirements, collaborating with clients on technical solutions, setting development team goals, managing task execution, mentoring team members, and providing guidance for career development.</p>
-
-    <div class="spacer"></div>
-    <header>
-      <div class="left">Java Software Engineer</div>
-      <div class="center"><a href="https://www.swissre.com/" target="_blank" class="icon _company swiss-re-light">Swiss Re via C.T.Co</a></div>
-      <div class="right">9/2006 - 6/2008</div>
-    </header>
-
-    <p>I was an integral member of the development team responsible for creating a new claim management workflow system for Swiss Re. My specific role was to design and develop the user interface using the ZKoss framework. Initially intended as a proof-of-concept, the project ultimately proved to be a success and became a key component of the company's portfolio, ultimately becoming the largest project the company had undertaken at that point.</p>
-
-    <div class="spacer"></div>
-    <header>
-      <div class="left">UI Software Engineer</div>
-      <div class="center"><a href="https://www.ctco.lv" target="_blank" class="icon _company ctco-light">C.T.Co</a></div>
-      <div class="right">4/2004 - 9/2006</div>
-    </header>
-
-    <p>I played a significant role in a research lab where we explored the potential use of new web technologies in our projects. One of my most notable accomplishments in this role was the development of a common components library. This library has served as the primary tool for creating user interfaces within the company, to my knowledge it still does.</p>
-
   </section>
+
   <section class="education-section block">
     <h1><span>Education</span></h1>
 
+    {{ range .Params.education }}
     <header>
-      <div class="left">Bachelor in Computer Science</div>
-      <div class="center"><a href="https://www.rtu.lv/en" target="_blank" class="icon _company rtu-light">Riga Technical University</a></div>
-      <div class="right">9/2000 - 6/2004</div>
+      <div class="left">{{ .title }}</div>
+      <div class="center"><a href="{{ .link }}" target="_blank" class="icon _company {{ .iconStyle }}">{{ .place }}</a></div>
+      <div class="right">{{ .period }}</div>
     </header>
+    {{ end }}
   </section>
+
   <section class="certificates-section block">
     <h1><span>Certifications</span></h1>
 
+    {{ range .Params.certificates }}
     <header>
-      <div class="left">Sun Java Programmer</div>
-      <div class="center"><span class="icon _company java-light">Sun Microsystems</span></div>
-      <div class="right">6/2006</div>
+      <div class="left">{{ .title }}</div>
+      <div class="center"><span class="icon _company {{ .iconStyle }}">{{ .place }}</span></div>
+      <div class="right">{{ .date }}</div>
     </header>
-
-    <header>
-      <div class="left">Sun Web Component Developer</div>
-      <div class="center"><span class="icon _company java-light">Sun Microsystems</span></div>
-      <div class="right">11/2006</div>
-    </header>
+    {{ end }}
   </section>
 
   <script>

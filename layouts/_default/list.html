@@ -3,13 +3,20 @@
 
 <head>
     <title>Simple one page resume generator</title>
+    <style>
+        {{ with resources.Get "css/landing.css" | minify}}
+            {{ .Content | safeCSS }}
+        {{ end }}
+    </style>
 </head>
 <body>
     <header>
         <h1>Simple resume generator</h1>
-        <p>This is opensource project for generating one-page resume. It's available on <a href="https://github.com/merkurij/resume">GitHub</a>.
-           You can generate your own resume by making pull request to repository. It will be generated and hosted right there.</p>
     </header>
+    <section>
+        <p>This project, which is available on <a href="https://github.com/merkurij/resume">GitHub</a>, enables the generation of a one-page resume by submitting a pull request to the repository.
+            The generated resume will then be hosted on the repository.</p>
+    </section>
     <footer>
         Created by team of enthusiasts.
     </footer>

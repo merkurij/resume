@@ -1,0 +1,32 @@
+:root {
+    --content-width: 1200px;
+}
+body {
+    background-color: rgb(36, 37, 45);
+    color: white;
+    width: var(--content-width);
+    margin: 0 auto;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+    transition: all 0.2s linear;
+    box-sizing: border-box;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+header {
+    text-align: center;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    margin: 10px;
+    text-align: center;
+    width: var(--content-width);
+}

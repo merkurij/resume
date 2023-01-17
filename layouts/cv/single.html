@@ -19,13 +19,15 @@
 <!--  <link rel="apple-touch-icon" href="icon.png">-->
   <!-- Place favicon.ico in the root directory -->
 
+  <style>
   {{ with resources.Get "css/normalize.css" | minify }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ .Content | safeCSS }}
   {{ end }}
 
   {{ with resources.Get "css/main.css" | minify }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
+    {{ .Content | safeCSS }}
   {{ end }}
+  </style>
 </head>
 
 <body>

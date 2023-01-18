@@ -1,6 +1,7 @@
 ---
 name: Vitaly Kulikov
 slug: "vitaly-kulikov"
+description: This is Vitaly Kulikov's professional resume, designed to showcase my professional capabilities and work experience to potential employers or business partners.
 position: "Software Architect, Engineering Manager"
 email: "kulikov.vitaly@gmail.com"
 location: "Riga, Latvia"

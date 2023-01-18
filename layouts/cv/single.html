@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>{{ .Params.name }} - professional resume</title>
-  <meta name="description" content="">
+  <meta name="description" content="{{ .Params.description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:title" content="{{ .Params.name }} - professional resume">
@@ -32,9 +32,9 @@
 
 <body>
   <header class="main-header">
-    <div class="holder-name">{{ .Params.name }}</div>
+    <h1 class="holder-name" aria-label="Resume name">{{ .Params.name }}</h1>
     <div class="theme-switcher" title="Dark/Light theme switcher">
-      <label class="switch">
+      <label class="switch" aria-label="Dark/Light theme switcher">
         <input type="checkbox" onchange="mode(this)">
         <span class="slider round"></span>
       </label>
@@ -47,7 +47,7 @@
     </div>
   </header>
   <section class="skill-section block">
-    <h1><span>Skills</span></h1>
+    <h2><span>Skills</span></h2>
     <ul>
       {{ range .Params.skills }}
         <li>
@@ -57,11 +57,11 @@
     </ul>
   </section>
   <section class="bio-section block">
-    <h1><span>About me</span></h1>
+    <h2><span>About me</span></h2>
     <p>{{ .Params.aboutme }}</p>
   </section>
   <section class="experience-section block">
-    <h1><span>Work experience</span></h1>
+    <h2><span>Work experience</span></h2>
 
     {{ range $index, $val := .Params.experience }}
       {{ if gt $index 0}}
@@ -79,7 +79,7 @@
   </section>
 
   <section class="education-section block">
-    <h1><span>Education</span></h1>
+    <h2><span>Education</span></h2>
 
     {{ range .Params.education }}
     <header>
@@ -91,7 +91,7 @@
   </section>
 
   <section class="certificates-section block">
-    <h1><span>Certifications</span></h1>
+    <h2><span>Certifications</span></h2>
 
     {{ range .Params.certificates }}
     <header>

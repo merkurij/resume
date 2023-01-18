@@ -229,6 +229,9 @@ section {
   .holder-details {
     font-size: 16px;
   }
+  .holder-details > div {
+    margin: 0.2em;
+  }
   .holder-details, .certificates-section > header, .education-section > header, .experience-section > header {
     flex-direction: column;
   }
@@ -262,27 +265,27 @@ section {
  * Content Block Style
  */
 
-.block > h1 {
+.block > h2 {
   font: 1.3em normal;
   margin: -1em -0.7em 0;
 }
-.block > h1 > span {
+.block > h2 > span {
   float: left;
   padding: 0 5px;
   color: var(--section-label-color);
   font-weight: 600;
 }
-.dark .block > h1 > span {
+.dark .block > h2 > span {
   color: var(--section-label-color-dark);
 }
-.block > h1:before {
+.block > h2:before {
   border-top: 2px groove threedface;
   content: ' ';
   float: left;
   margin: 0.55em 2px 0 5px;
   width: 0.75em;
 }
-.block > h1:after {
+.block > h2:after {
   border-top: 2px groove threedface;
   content: ' ';
   display: block;
@@ -321,7 +324,7 @@ section {
   display: inline-block;
 }
 
-.experience-section > div > h1 {
+.experience-section > div > h2 {
   font-size: 1em;
   text-align: center;
 }
